@@ -1,12 +1,14 @@
-# Use official Node.js LTS image
-FROM node:20-alpine
+# Use official Node.js LTS image (Debian-based for better Rust compatibility)
+FROM node:20-slim
 
-# Install Rust and Cargo (needed for building Soroban contracts)
-RUN apk add --no-cache \
+# Install system dependencies
+RUN apt-get update && apt-get install -y \
     curl \
-    build-base \
+    build-essential \
+    pkg-config \
+    libssl-dev \
     git \
-    bash
+    && rm -rf /var/lib/apt/lists/*
 
 # Install Rust
 RUN curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y
