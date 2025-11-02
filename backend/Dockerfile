@@ -15,8 +15,8 @@ ENV PATH="/root/.cargo/bin:${PATH}"
 # Add wasm32 target for Soroban
 RUN rustup target add wasm32-unknown-unknown
 
-# Install Stellar CLI
-RUN cargo install --locked stellar-cli --features opt
+# Install Stellar CLI (without features flag)
+RUN cargo install --locked stellar-cli
 
 # Set working directory
 WORKDIR /app
