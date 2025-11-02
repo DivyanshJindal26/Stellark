@@ -1,0 +1,20 @@
+version: '3.8'
+
+services:
+  stellark-backend:
+    build:
+      context: ..
+      dockerfile: backend/Dockerfile
+    container_name: stellark-backend
+    ports:
+      - "7042:7042"
+    environment:
+      - PORT=7042
+      - NODE_ENV=production
+    restart: unless-stopped
+    networks:
+      - stellark-network
+
+networks:
+  stellark-network:
+    driver: bridge
