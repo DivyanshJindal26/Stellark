@@ -1,57 +1,151 @@
-## 🚀 1️⃣ 25-Day Roadmap (Short-Term Execution Plan)
+# 💠 Stellar Equity Marketplace
 
-### **Phase 1: Core Strengthening (Days 1–5)**
-
-* **Smart Contract Refinement:** Finalize token issuance, resale, and buyback logic.
-* **Frontend Improvements:** Add company profile view, investment history, and better error handling.
-* **Stellar Optimization:** Integrate proper trustlines & Freighter wallet auth.
-
-🟦 *Outcome:* Fully stable version of equity tokenization with basic marketplace.
+A decentralized platform that lets startups **tokenize their equity** on the **Stellar blockchain**.  
+Investors can buy, sell, and relist these tokens securely — with all share transfers handled on-chain instead of a central database.
 
 ---
 
-### **Phase 2: Agentic AI Integration (Days 6–12)**
+## 🧩 Features
 
-* **Data Layer:** Periodically ingest on-chain + off-chain startup data (e.g., token demand, funding progress, engagement).
-* **AI Advisor Bot:** Build a **chatbot-style agent** that:
-
-  * Chats with investors in natural language.
-  * Suggests startups to invest in based on patterns (activity, token trend, founder reputation, etc.).
-  * Explains risks, token price variation, and performs sentiment analysis from social data.
-* **MCP (Multi-Command Protocol) Integration:**
-
-  * Users can instruct the AI:
-
-    > “Buy 50 tokens of AlphaCorp when price < 2 XLM.”
-  * AI executes via MCP → calls backend → smart contract interaction → auto-signs when user conditions match.
-
-🟦 *Outcome:* AI-powered investment assistant capable of executing real blockchain actions.
+- 🪙 On-chain share trading (no centralized DB storage)
+- 🏢 Company listing and investment flow
+- 🧑‍💼 Admin dashboard for platform management
+- ⚖️ Inflation-free token model
+- 💬 (Optional) AI investment assistant for intelligent trade execution
 
 ---
 
-### **Phase 3: Social + NFT Utility (Days 13–18)**
+## ⚙️ Tech Stack
 
-* **Reputation NFTs:**
-
-  * Top holders of each company receive **“Founder’s Circle NFTs”**.
-  * Unlock perks: early access to new rounds, voting power, or direct chat with founders.
-* **Gamification Layer:**
-
-  * Level badges for investors based on diversity, token count, and engagement.
-  * AI-driven leaderboard with live market heatmap.
-
-🟦 *Outcome:* Adds emotional + gamified stickiness → higher user retention and visibility.
+| Layer | Technology |
+|-------|-------------|
+| Frontend | React, TailwindCSS |
+| Backend | Express.js, Node.js |
+| Blockchain | Stellar SDK |
+| Database | PostgreSQL |
 
 ---
 
-### **Phase 4: Scaling and Security (Days 19–25)**
+## 🧱 Project Setup
 
-* **Legal & Compliance Prep:** Mock SPV structure simulation (for future real-world compliance).
-* **Stellar Cross-Chain Bridge Research:** Feasibility study to expand to Polygon or Solana for liquidity.
-* **Performance Optimization:** Batch processing of token sales to handle 1000+ transactions/day.
-* **Public Launch Simulation:** Invite a few startups (real or mock) to host listings and get AI-powered exposure.
+Follow these steps to run the project locally:
 
-🟦 *Outcome:* Scalable, AI-integrated, and investor-friendly prototype ready for demo or incubation.
+### **1️⃣ Clone the Repository**
+```bash
+git clone https://github.com/<your-username>/stellark.git
+cd stellark
+````
+
+### **2️⃣ Install Dependencies**
+
+For backend:
+
+```bash
+cd backend
+npm install
+```
+
+For frontend:
+
+```bash
+cd ../frontend
+npm install
+```
+
+### **3️⃣ Configure Environment**
+
+Create a `.env` file inside both `backend/` and `frontend/` directories.
+
+**Backend `.env` example:**
+
+```
+PORT=7042
+STELLAR_NETWORK=testnet
+STELLAR_SECRET_KEY=<your-stellar-secret>
+DATABASE_URL=postgres://user:password@localhost:5432/stellar_equity
+```
+
+**Frontend `.env` example:**
+
+```
+VITE_BACKEND_URL=http://localhost:7042
+```
+
+### **4️⃣ Start the Backend**
+
+```bash
+pm2 start server.js --name "stellar-backend"
+```
+
+or run without PM2:
+
+```bash
+npm start
+```
+
+### **5️⃣ Start the Frontend**
+
+```bash
+npm run dev
+```
+
+Then visit → **[http://localhost:5173](http://localhost:5173)**
 
 ---
 
+## 🚀 25-Day Roadmap
+
+### **Phase 1: Core Improvements (Days 1–5)**
+
+* Move **share relisting** from database to **on-chain** (Stellar).
+* Fix minor bugs and improve overall stability.
+
+🟩 *Outcome:* Reliable on-chain relisting and a stable working version.
+
+---
+
+### **Phase 2: Dashboard & Management (Days 6–12)**
+
+* Add an **Admin Dashboard** for company and user management.
+* Improve UI consistency and error handling.
+
+🟩 *Outcome:* Simplified monitoring and control for admins.
+
+---
+
+### **Phase 3: Listing Flow & Token Economics (Days 13–18)**
+
+* Improve **company listing flow** for better UX.
+* Make the system **inflation-free** by refining token mint logic.
+
+🟩 *Outcome:* Cleaner token economy and smoother onboarding for startups.
+
+---
+
+### **Phase 4: Testing & Deployment (Days 19–25)**
+
+* End-to-end testing of listings, investments, and relisting.
+* Fix edge cases and prepare for public demo.
+
+🟩 *Outcome:* Stable, demo-ready platform with on-chain equity trading.
+
+---
+
+### **Optional (If Time Permits): Agentic AI Integration**
+
+If time allows, prototype an **AI-powered investment assistant** that can:
+
+* Analyze token trends and market engagement.
+* Suggest startups to invest in.
+* Execute investor commands (e.g., “Buy 50 tokens if price < 2 XLM”).
+
+🟩 *Outcome:* Early version of an intelligent, agent-driven investment system.
+
+---
+
+## 👥 Contributors
+
+* **Divyansh Jindal**
+* *Sachit Bansal*
+
+---
