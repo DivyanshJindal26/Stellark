@@ -1,5 +1,6 @@
 # 💠 Stellar Equity Marketplace
 
+Presenting Stellark - Stellar x Shark Tank
 A decentralized platform that lets startups **tokenize their equity** on the **Stellar blockchain**.  
 Investors can buy, sell, and relist these tokens securely — with all share transfers handled on-chain instead of a central database.
 
@@ -56,19 +57,14 @@ npm install
 
 Create a `.env` file inside both `backend/` and `frontend/` directories.
 
-**Backend `.env` example:**
-
-```
-PORT=7042
-STELLAR_NETWORK=testnet
-STELLAR_SECRET_KEY=<your-stellar-secret>
-DATABASE_URL=postgres://user:password@localhost:5432/stellar_equity
-```
-
 **Frontend `.env` example:**
 
 ```
-VITE_BACKEND_URL=http://localhost:7042
+VITE_API_URL=https://stellarhost.softkernel.tech
+VITE_SUPABASE_URL=...
+VITE_SUPABASE_ANON_KEY=...
+VITE_EQUITY_TOKEN_CONTRACT_ID=...
+VITE_XLM_TOKEN_ADDRESS=...
 ```
 
 ### **4️⃣ Start the Backend**
